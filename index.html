@@ -28,13 +28,43 @@
         console.log(percentage)
 
         let plants = 8;
-        let prodPlants = 150;
+        let prodPlants = 100;
         let prodTotal =  prodPlants * plants;
         let price = 800;
         let total = prodTotal * price;
 
         console.log(total)
         console.log(total/2 + " each")
+
+        let age = 15;
+
+        if (age < 14 || age > 90) {
+            console.log("True");
+        }   else {
+            console.log("False")
+        }
+
+
+
+        // Checking Login
+
+        let username = prompt("Who's there?", "")
+
+        if (username == "Admin") {
+            let password = prompt("Password?","") 
+            if (password === "TheMaster") {
+                alert("Welcome!")
+            } else if (password === null || password === "") {
+                alert("Cancelled")
+            } else {
+                alert("Wrong password")
+            }
+        } else if (username === null || username === "") {
+            alert("Cancelled")
+        } else {
+            alert("I don't know you")
+        }
+        
 
 
     </script>
