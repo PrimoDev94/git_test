@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <script src="./script.js"></script>
     <meta charset="UTF-8">
@@ -7,66 +8,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>First Lesson of JS</title>
 </head>
+
 <body>
+
+    <label for="weather">Select the weather type today:</label>
+    <select id="weather">
+        <option value="">--Make a choice--</option>
+        <option value="sunny">Sunny</option>
+        <option value="rainy">Rainy</option>
+        <option value="snowing">Snowing</option>
+        <option value="overcast">Overcast</option>
+    </select>
+
+    <p></p>
     <script>
+        const select = document.querySelector("select");
+        const para = document.querySelector("p");
+
+        select.addEventListener("change", setWeather);
+
+        function setWeather() {
+            const choice = select.value;
+
+            switch (choice) {
+                case "sunny":
+                    para.textContent = "It is nice and sunny outside today. Wear shorts! Go to the beach, or the park, and get an ice cream!";
+                    break;
+                case "rainy":
+                    para.textContent = "Rain is falling outside; take a rain coat and an umbrella, and don't stay out for too long.";
+                    break;
+                case "snowing":
+                    para.textContent = "The snow is coming down - it is freezing! Best to stay in with a cup of hot chocolate, or go build a snowman.";
+                    break;
+                case "overcast":
+                    para.textContent = "It isn't raining, but the sky is grey and gloomy; it could turn any minute, so take a rain coat just in case.";
+                    break;
+                default:
+                    para.textContent = "";
+            }
+        }
+
+
         let a = 10;
 
         console.log("Hello, Primo!");
-        
+
         console.log(23 + 97);
-        console.log(1,2,3,4,5,6);
-        console.log((4+6+9)/77);
-        
+        console.log(1, 2, 3, 4, 5, 6);
+        console.log((4 + 6 + 9) / 77);
+
         console.log(9 * a);
-        
+
         let b = 7 * a;
         console.log(b);
 
         const max = 57;
         let actual = max - 13;
         let percentage = actual / max;
-        console.log(percentage)
+        console.log(percentage);
 
         let plants = 8;
         let prodPlants = 100;
-        let prodTotal =  prodPlants * plants;
+        let prodTotal = prodPlants * plants;
         let price = 800;
         let total = prodTotal * price;
 
-        console.log(total)
-        console.log(total/2 + " each")
+        console.log(total);
+        console.log(total / 2 + " each");
 
         let age = 15;
 
         if (age < 14 || age > 90) {
             console.log("True");
-        }   else {
-            console.log("False")
+        } else {
+            console.log("False");
         }
 
 
 
         // Checking Login
 
-        let username = prompt("Who's there?", "")
+        let username = prompt("Who's there?", "");
 
         if (username == "Admin") {
-            let password = prompt("Password?","") 
+            let password = prompt("Password?", "");
             if (password === "TheMaster") {
-                alert("Welcome!")
+                alert("Welcome!");
             } else if (password === null || password === "") {
-                alert("Cancelled")
+                alert("Cancelled");
             } else {
-                alert("Wrong password")
+                alert("Wrong password");
             }
         } else if (username === null || username === "") {
             alert("Cancelled")
         } else {
-            alert("I don't know you")
+            alert("I don't know you");
         }
+
+/**
         
+        Score of less than 0 or more than 100 — "This is not possible, an error has occurred."
+        Score of 0 to 19 — "That was a terrible score — total fail!"
+        Score of 20 to 39 — "You know some things, but it\'s a pretty bad score. Needs improvement."
+        Score of 40 to 69 — "You did a passable job, not bad!"
+        Score of 70 to 89 — "That\'s a great score, you really know your stuff."
+        Score of 90 to 100 — "What an amazing score! Did you cheat? Are you for real?"
+**/
+        /**
+        switch (true) {
+            case (score > 100 || score < 0):
+                response = "This is not possible, an error has occurred.";
+                break;
+            case (score >= 0 && score <= 19)
+        response = "That was a terrible score — total fail!";
+                break;
+            case (score >= 20 && score < 40):
+                response = "You know some things, but it's a pretty bad score.";
+                break;
+            case (score >= 40 && score <= 69):
+                response = "You did a passable job, not bad!";
+                break;
+            case (score >= 70 && score <= 89):
+                response = "That's a great score, you really know your stuff.";
+                break;
+            case (score >= 90 && score <= 100):
+                response = "What an amazing score! Did you cheat? Are you for real?";
+                break;
+        }
+        **/
 
 
+        let result = prompt("What's the official name of JavaScript", "")
+
+        if (result == ECMAScript) {
+            alert("Right")
+        } else {
+            "You don't know?"
+        }
     </script>
 </body>
+
 </html>
